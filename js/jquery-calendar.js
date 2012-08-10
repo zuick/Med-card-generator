@@ -287,7 +287,7 @@
     // way to do this is to add a property to the already-public plugin fn
 
 	jQuery.fn.simpleDatepicker.formatOutput = function (dateObj) {
-		return  dateObj.getDate() + "/" + (dateObj.getMonth() + 1) + "/" + dateObj.getFullYear();	
+		return  dateObj.getDate() + "." + (dateObj.getMonth() + 1) + "." + dateObj.getFullYear();	
 	};
 	
 	jQuery.fn.simpleDatepicker.defaults = {
@@ -300,8 +300,8 @@
 		enddate : today.getFullYear() + 1,
 		
 		// offset from the top left corner of the input element
-		x : 18, // must be in px
-		y : 18 // must be in px
+		x : 0, // must be in px
+		y : 22 // must be in px
 	};
 
 })(jQuery);

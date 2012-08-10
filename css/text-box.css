@@ -9,8 +9,9 @@
 	font-family:arial;
 	box-shadow: -2px 2px 15px #999;
 }
-.text-box h1 { font-size: 14pt; color: #555; }
-.text-box h2{ font-size: 14pt; }
+.text-box  .date,
+.text-box h1 { font-size: 14pt; color: #555; margin: 15px 0 10px 0; }
+.text-box h2{ font-size: 14pt; margin: 10px;}
 .text-box p { margin: 2px 0 2px 0; }
 .text-box pre { 
 	margin: 0;
@@ -19,4 +20,11 @@
 	font-family:arial;
 	font-weight: bold;
 }
-.text-box div { margin: 2px 0 0 0; } 
+.text-box div { margin: 2px 0 0 0; }
+.text-box  .date {
+	display: inline; 
+	float: right;
+	margin-right: 20px;
+}
+.text-box div.separator { height: 10px; }
+.text-box div.small { font-size: 10pt; }

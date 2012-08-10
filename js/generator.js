@@ -62,20 +62,20 @@ function fill_from_checkboxes( field_id, field_name, separator ){
 
 }
 
-function fill_from_select( field_id, field_name, separator){
+function fill_from_select( field_id, field_name, separator ){
 	var addition = '';
 	addition = ( custom_input_empty( field_id ) ) ? $('#' + field_id).val() : get_custom_input_val( field_id );		
 	$('#' + field_id + '-p').html( '<pre>' + field_name + separator + '</pre>' + addition);
 }
 
-function fill_from_double_select( id_main, id_second, field_name){
+function fill_from_double_select( id_main, id_second, field_name, separator ){
 	var addition = '';
 	addition = ( custom_input_empty( id_main ) ) ? ($('#' + id_main).val() + ', ' + $('#' + id_second).val()) : get_custom_input_val( id_main );
 	
-	$('#' + id_main + '-p').text( field_name + ': ' + addition );
+	$('#' + id_main + '-p').html( '<pre>' + field_name + separator + '</pre>' + addition );
 }
 
-function fill_from_input( field_id, field_name, separator){
+function fill_from_input( field_id, field_name, separator ){
 	fill_from_select( field_id, field_name, separator );
 }
 
@@ -91,7 +91,7 @@ function generate(){
 	fill_from_input( 'chd', 'ЧД', ':');
 	fill_from_input( 'chss', 'ЧСС', ':');
 	fill_from_select( 'name', '', '');
-	fill_from_double_select( 'state', 'state-level', 'Состояние');
+	fill_from_double_select( 'state', 'state-level', 'Состояние', ':');
 	fill_from_select( 'skin', 'Кожа', ':');
 	fill_from_select( 'dyha', 'Дыхание', ':');
 	fill_from_select( 'serd', 'Сердечные тоны', ':');
