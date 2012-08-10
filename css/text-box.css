@@ -1,0 +1,22 @@
+.text-box{ background-color: #FFF; }
+.text-box{
+	padding:10px 10px 10px 70px;
+	margin:200px 0 0 20px;
+	width:50%;
+	float:left;
+	display:block;
+	border: 1px solid #CCC;
+	font-family:arial;
+	box-shadow: -2px 2px 15px #999;
+}
+.text-box h1 { font-size: 14pt; color: #555; }
+.text-box h2{ font-size: 14pt; }
+.text-box p { margin: 2px 0 2px 0; }
+.text-box pre { 
+	margin: 0;
+	margin-right: 5px;
+	display: inline;
+	font-family:arial;
+	font-weight: bold;
+}
+.text-box div { margin: 2px 0 0 0; } 

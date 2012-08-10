@@ -2,51 +2,6 @@ body{
 	margin:0;
 	background-color: #EEE;
 }
-.param-box  h1{
-	font-family:arial;
-	font-size: 18pt;
-	margin: 5px 0px;
-}
-.param-box  label{ margin:0 10px 0 5px; }
-.param-box input { margin-bottom: 10px; }
-.param-box{
-	padding:10px;
-	margin:0px;
-	width:40%;
-	float:left;
-	display:block;
-}
-.param-box table select{ width: 250px; }
-.param-box table input.standart{ margin:0; width: 200px; }
-
-.param-box table input.custom-input{ margin:0; width: 300px; }
-.param-box input.person-name{ margin:0; width: 500px; }
-.param-box .checkboxes input { width: 15px; }
-.param-box  table { border-spacing: 0px; }
-.param-box  table.parameters td { vertical-align: top; border-bottom: 1 dotted #777; padding: 10px 0 5px 0; }
-.param-box  table.parameters tr { }
-
-.text-box{ background-color: #FFF; }
-.text-box{
-	padding:10px 10px 10px 70px;
-	margin:200px 0 0 0;
-	width:50%;
-	float:left;
-	display:block;
-	border: 1px solid #CCC;
-	font-family:arial;
-	box-shadow: -2px 2px 15px #999;
-}
-.text-box pre{
-	font-family:arial;
-}
-.text-box h1 { font-size: 14pt; }
-.text-box h2{ font-size: 10pt; }
-.text-box p { margin: 2px 0 2px 0; }
-input.small{
-	width: 50px;
-	margin-right: 10px;
-}
 
 @media print{
 	div.param-box { display: none; }
