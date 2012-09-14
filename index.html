@@ -19,11 +19,12 @@
 				<input type="radio" name="type" value="Приём" class="standart"  checked>Приём</input>
 				<input type="radio" name="type" value="Вызов" class="standart" >Вызов</input>
 				<input type="checkbox" name="zdorov" class="standart" >Выздоровление</input><br>
-				
+				<label for="temp">Темп-ра</label><input class="small" id="temp" type="text"/>
+				<label for="chd">ЧД</label><input class="small" id="chd" type="text"/>
+				<label for="chss">ЧСС</label><input class="small" id="chss" type="text"/>
+				<label for="ad">АД</label><input class="small" id="ad" type="text"/><br>
+				<label for="jalob">Жалобы</label><input class="standart" id="jalob" type="text"/><br>
 				<h1>Состояние больного</h1>
-				<label for="temp">Темп.</label><input class="small" id="temp" type="text" class="standart" />
-				<label for="chd">ЧД</label><input class="small" id="chd" type="text" class="standart" />
-				<label for="chss">ЧСС</label><input class="small" id="chss" type="text" class="standart" /><br>
 				
 				<table class="parameters">
 					<tr>
@@ -83,6 +84,15 @@
 						</td>
 					</tr>
 					<tr>
+						<td><label for="odsh" >Одышка</label></td>
+						<td><select id="odsh" >
+							<option>Экспираторная</option>
+							<option>Инспираторная</option>
+							<option>Смешанная</option>
+							<option>Нет</option>
+						</select></td>
+					</tr>
+					<tr>
 						<td><label for="limf">Лимфотические узлы</label></td>
 						<td>
 							<div id="limf" class="checkboxes">
@@ -112,10 +122,14 @@
 							<option>Везикулярное</option>
 							<option>Пуэрильное</option>
 							<option>Жёсткое, хрипы мелкопузырчатые</option>
+							<option>Жёсткое, хрипы влажные, мелкопузырчатые</option>
 							<option>Жёсткое, хрипы влажные</option>
 							<option>Жёсткое, хрипы сухие</option>
-							<option>Жёсткое, хрипы свмстящие</option>
+							<option>Жёсткое, хрипы сухие, свистящие</option>
+							<option>Жёсткое, хрипы свистящие</option>
 							<option>Жёсткое, хрипы крепитирующие</option>
+							<option>Жёсткое, хрипы единичные сухие</option>
+							<option>Жёсткое, хрипы единичные влажные</option>
 						</select></td>
 					</tr>
 					<tr>
@@ -139,6 +153,7 @@
 							<option>Оформлен</option>
 							<option>Жёлтый, кашицеобразный</option>
 							<option>Жидкий</option>
+							<option>Запоры</option>
 						</select></td>
 					</tr>
 					<tr>
@@ -161,11 +176,13 @@
 			<div id="temp-p" class="small"></div>
 			<div id="chd-p" class="small"></div>
 			<div id="chss-p" class="small"></div>
+			<div id="ad-p" class="small"></div>
 			<div class="separator"></div>
 			<div id="state-p"></div>
 			<div id="skin-p"></div>
 			<div id="zev-p"></div>
-			<div id="kash-p"></div>			
+			<div id="kash-p"></div>
+			<div id="odsh-p"></div>		
 			<div id="limf-p"></div>
 			<div id="nosd-p"></div>
 			<div id="dyha-p"></div>

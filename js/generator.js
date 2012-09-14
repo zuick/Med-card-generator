@@ -87,9 +87,10 @@ function fill_from_radiobutton( field_id, field_name ){
 function generate(){
 	fill_from_radiobutton( 'type', '' );
 	fill_from_input( 'date', '', '');
-	fill_from_input( 'temp', 'Темп', ':');
+	fill_from_input( 'temp', 'Темп-ра', ':');
 	fill_from_input( 'chd', 'ЧД', ':');
 	fill_from_input( 'chss', 'ЧСС', ':');
+	fill_from_input( 'ad', 'АД', ':');
 	fill_from_select( 'name', '', '');
 	fill_from_double_select( 'state', 'state-level', 'Состояние', ':');
 	fill_from_select( 'skin', 'Кожа', ':');
@@ -100,6 +101,7 @@ function generate(){
 	fill_from_select( 'moch', 'Мочеиспускание', ':');
 	fill_from_checkboxes('zev', 'Зев', ':');
 	fill_from_checkboxes('kash', 'Кашель', ':');
+	fill_from_select( 'odsh', 'Одышка', ':');
 	fill_from_checkboxes('limf', 'Лимфотические узлы', ':');
 	fill_from_checkboxes('nosd', 'Носовое дыхание', ':');	
 
