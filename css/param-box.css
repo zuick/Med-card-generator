@@ -1,31 +1,32 @@
-.param-box  h1{
-	font-family:arial;
-	font-size: 18pt;
-	margin: 5px 0px;
-}
-.param-box  label{ margin:0 10px 0 5px; }
-.param-box input { margin-bottom: 10px; }
-.param-box{
-	padding:10px;
-	margin:0px;
-	width:40%;
-	float:left;
-	display:block;
-}
-.param-box table select{ width: 250px; }
-.param-box table input.standart{ margin:0; width: 200px; }
+.param-box{ padding:20px; background-color: #EEE; box-shadow: -2px 2px 15px #999; }
+.param-box .row-720 { margin: 0; padding: 0; width: 720px; height: 30px; display: block; padding-top: 10px;}
+.param-box table .row-720 { margin: 0; padding: 0; width: 720px; height: 63px; display: block; padding-top: 10px;}
+.param-box h1{ font-family:arial; font-size: 18pt; margin: 5px 0px; }
+.param-box label{ margin:0 10px 0 5px; }
 
-.param-box table input.custom-input{ margin:0; width: 300px; }
-.param-box input.person-name{ margin:0; width: 500px; }
+.param-box input { margin-bottom: 10px; }
+.param-box input.small{ width: 50px; margin-right: 10px; }
+.param-box input.middle{ margin:0; width: 100px; }
+.param-box input.standart{ margin:0; width: 200px; }
+.param-box input.large{ margin:0; width: 500px; }
+.param-box table.parameters input.custom-input{ margin:0; width: 270px; }
+.param-box table.parameters select{ width: 270px; }
+
+.param-box table.lechenie input.custom-input{ margin:0; width: 200px; }
+.param-box table.lechenie select{ width: 200px; }
+.param-box table.lechenie td { width: auto; border-bottom: 1 dotted #777; border-top: 1 dotted #777; vertical-align: top; padding: 10px; background-color: #DDD;}
+.param-box table.lechenie td.left { border-left: 1 dotted #777; }
+.param-box table.lechenie td.right { border-right: 1 dotted #777; }
+.param-box table.lechenie td input[type=button] { margin: 10px 0; }
+.param-box table.lechenie { border-spacing: 0; }
 .param-box .checkboxes input { width: 15px; }
-.param-box  table { border-spacing: 0px; }
-.param-box  table.parameters td { vertical-align: top; border-bottom: 1 dotted #777; padding: 10px 0 5px 0; }
-.param-box  table.parameters tr { }
-.param-box input.small{
-	width: 50px;
-	margin-right: 10px;
-}
-@media print{
-	div.param-box { display: none; }
-	.text-box { width: 100%; padding: 0; margin: 0; border: 0; border-bottom: 1px solid #CCC; height: 50%;}
+
+.param-box table.parameters { border-spacing: 0px; }
+.param-box table.parameters td { border-bottom: 1 dotted #777; vertical-align: top; padding: 10px 0 10px 10px; min-width: 150px; }
+
+.param-box .sub { padding-left: 20px; }
+.param-box .date-wrapper { float: right; }
+@media print{ 
+    div.param-box { display: none; }
+    .text-box { width: 100%; padding: 0; margin: 0; border: 0; border-bottom: 1px solid #CCC; height: 50%;}
 }

@@ -1,30 +1,37 @@
-.text-box{ background-color: #FFF; }
 .text-box{
-	padding:10px 10px 10px 70px;
-	margin:200px 0 0 20px;
-	width:50%;
-	float:left;
-	display:block;
-	border: 1px solid #CCC;
-	font-family:arial;
-	box-shadow: -2px 2px 15px #999;
+    padding:20px 20px 20px 100px;
+    border: 1px solid #CCC;
+    font-family:arial;
+    box-shadow: -2px 2px 15px #999;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
+.text-box table.info { border-spacing: 0; margin: 10px 0; }
+.text-box table.info td{ padding: 5px; font-family:arial; font-size: 9pt;}
+
+.text-box{ background-color: #FFF; }
 .text-box  .date,
-.text-box h1 { font-size: 14pt; color: #555; margin: 15px 0 10px 0; }
-.text-box h2{ font-size: 14pt; margin: 10px;}
+.text-box h1 { font-size: 12pt; color: #555; margin: 0; }
+.text-box h2{ font-size: 12pt; margin: 0; }
 .text-box p { margin: 2px 0 2px 0; }
-.text-box pre { 
-	margin: 0;
-	margin-right: 5px;
-	display: inline;
-	font-family:arial;
-	font-weight: bold;
+.text-box div {	
+    margin: 0;
+    margin-right: 5px;
+    font-family:arial;
+    font-size: 10pt;
+}  
+.text-box div pre { 
+    margin: 0;
+    margin-right: 5px;
+    display: inline;
+    font-family:arial;
+    font-size: 10pt;
 }
 .text-box div { margin: 2px 0 0 0; }
 .text-box  .date {
-	display: inline; 
-	float: right;
-	margin-right: 20px;
+    display: inline; 
+    float: right;
+    margin-right: 20px;
 }
 .text-box div.separator { height: 10px; }
-.text-box div.small { font-size: 10pt; }
+.text-box div.small { font-size: 9pt; }
