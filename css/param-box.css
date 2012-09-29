@@ -7,6 +7,7 @@
 .param-box input { margin-bottom: 10px; }
 .param-box input.small{ width: 50px; margin-right: 10px; }
 .param-box input.middle{ margin:0; width: 100px; }
+.param-box input.middle.large { margin:0; width: 350px; }
 .param-box input.standart{ margin:0; width: 200px; }
 .param-box input.large{ margin:0; width: 500px; }
 .param-box table.parameters input.custom-input{ margin:0; width: 270px; }
@@ -20,13 +21,10 @@
 .param-box table.lechenie td input[type=button] { margin: 10px 0; }
 .param-box table.lechenie { border-spacing: 0; }
 .param-box .checkboxes input { width: 15px; }
-
+.param-box .checkboxes label { display: block; }
+.param-box textarea { width: 250px; }
 .param-box table.parameters { border-spacing: 0px; }
 .param-box table.parameters td { border-bottom: 1 dotted #777; vertical-align: top; padding: 10px 0 10px 10px; min-width: 150px; }
-
 .param-box .sub { padding-left: 20px; }
 .param-box .date-wrapper { float: right; }
-@media print{ 
-    div.param-box { display: none; }
-    .text-box { width: 100%; padding: 0; margin: 0; border: 0; border-bottom: 1px solid #CCC; height: 50%;}
-}
+@media print{ div.param-box { display: none; } }

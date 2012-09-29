@@ -1,27 +1,30 @@
 <HTML>
     <HEAD>
-	    <TITLE>Шаблонизатор медицинских карт v0.7</TITLE>
-	    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	    <LINK href="css/style.css" rel="stylesheet" type="text/css">
-	    <LINK href="css/text-box.css" rel="stylesheet" type="text/css">
-	    <LINK href="css/param-box.css" rel="stylesheet" type="text/css">
-	    <LINK href="css/calendar.css" rel="stylesheet" type="text/css">
-	    <script type="text/javascript" src="js/jquery-min.js"></script>
-	    <script type="text/javascript" src="js/jquery-calendar.js"></script>
-	    <script type="text/javascript" src="js/generator.js"></script>		
-	    <script type="text/javascript" src="js/treatment.js"></script>		
+	<TITLE>Шаблонизатор медицинских карт v0.8</TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<LINK href="css/style.css" rel="stylesheet" type="text/css">
+	<LINK href="css/text-box.css" rel="stylesheet" type="text/css">
+	<LINK href="css/param-box.css" rel="stylesheet" type="text/css">
+	<LINK href="css/calendar.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery-min.js"></script>
+	<script type="text/javascript" src="js/jquery-calendar.js"></script>
+	<script type="text/javascript" src="js/generator.js"></script>		
+	<script type="text/javascript" src="js/treatment.js"></script>		
     </HEAD>
     <BODY>
 	<div class="center-720 param-box">
 	    <form action="#" id="params">
 		<h1>Заголовок</h1>
 		<div class="row-720">
-		    <label for="priem">Приём</label><input id="priem" type="radio" name="type" value="Приём" checked/>
-		    <label for="vysov">Вызов</label><input id="vysov" type="radio" name="type" value="Вызов" >
+		    <label for="priem">Первичный приём<input id="per-priem" type="radio" name="type" value="Первичный приём" checked/></label>
+		    <label for="priem">Повторный приём<input id="pov-priem" type="radio" name="type" value="Повторный приём"/></label>
+		    <label for="vysov">Вызов<input id="vysov" type="radio" name="type" value="Вызов" ></label>
+		    <label for="aktivno">Активно<input id="aktivno" type="radio" name="type" value="Активно" ></label>
 		    <div class="date-wrapper"><label for="date">Дата</label><input id="date" type="text" class="middle" /></div>
 		</div>
 		<div class="row-720">
-		    <label for="name">ФИО</label><input id="name" type="text" class="large"/>
+		    <label for="name">ФИО</label><input id="name" type="text" class="middle large"/>
+		    <div class="date-wrapper"><label for="person-date">Дата рождения</label><input id="person-date" type="text" class="middle" /></div>
 		</div>
 		<div class="row-720">
 		    <label for="adres">Адрес</label><input class="large" id="adres" type="text"/>
@@ -39,152 +42,161 @@
 
 		<table class="parameters">
 		    <tr>
-			    <td><label for="state">Состояние</label></td>
-			    <td>
+			<td><label for="state">Состояние</label></td>
+			<td>
 			    <select id="state" >
-				    <option>Удовлетворительное</option>
-				    <option>Относительно удовлетворительное</option>
-				    <option>Средней тяжести</option>
-				    <option>Тяжёлое</option>
+				<option>Удовлетворительное</option>
+				<option>Относительно удовлетворительное</option>
+				<option>Средней тяжести</option>
+				<option>Тяжёлое</option>
 			    </select>
 			    <select id="state-level" >
-				    <option></option>
-				    <option>Стабильное</option>
-				    <option>Без изменений</option>
-				    <option>Без ухудшения</option>
-				    <option>С улучшением</option>
-				    <option>С положительной динамикой</option>
+				<option></option>
+				<option>Стабильное</option>
+				<option>Без изменений</option>
+				<option>Без ухудшения</option>
+				<option>С улучшением</option>
+				<option>С положительной динамикой</option>
 			    </select>
-			    </td>
+			</td>
 		    </tr>
 		    <tr>
-			    <td><label for="skin" >Кожа</label></td>
-			    <td><select id="skin" >
-				    <option>Чистая, бледно-розовая</option>
-				    <option>Желтушная</option>
-				    <option>Гиперемирована</option>
-				    <option>Везикуло-папуллёзная сыпь</option>
-				    <option>Зуд</option>
-				    <option>Мелкоточечная</option>
+			<td><label for="skin" >Кожа</label></td>
+			<td><select id="skin" >
+				<option>Чистая, бледно-розовая</option>
+				<option>Желтушная</option>
+				<option>Гиперемирована</option>
+				<option>Везикуло-папуллёзная сыпь</option>
+				<option>Зуд</option>
+				<option>Мелкоточечная</option>
 			    </select></td>
 		    </tr>
 		    <tr>	
-			    <td><label for="zev">Зев</label></td>
-			    <td>
-				    <div id="zev" class="checkboxes" >
-					    <div><input type="checkbox" value="Умеренно-гиперемирован" >Умеренно-гиперемирован</input></div>
-					    <div><input type="checkbox" value="Ярко-гиперемирован" >Ярко-гиперемирован</input></div>
-					    <div><input type="checkbox" value="Зернистость задней стенки глотки" >Зернистость задней стенки глотки</input></div>
-					    <div><input type="checkbox" value="Слизь по задней стенке глотки" >Слизь по задней стенке глотки</input></div>
-					    <div><input type="checkbox" value="Чистый, розовый" >Чистый, розовый</input></div>
-				    </div>
-			    </td>
+			<td><label for="zev">Зев</label></td>
+			<td>
+			    <div id="zev" class="checkboxes" >
+				<label><input type="checkbox" value="Умеренно-гиперемирован" />Умеренно-гиперемирован</label>
+				<label><input type="checkbox" value="Ярко-гиперемирован" />Ярко-гиперемирован</label>
+				<label><input type="checkbox" value="Зернистость задней стенки глотки" />Зернистость задней стенки глотки</label>
+				<label><input type="checkbox" value="Слизь по задней стенке глотки" />Слизь по задней стенке глотки</label>
+				<label><input type="checkbox" value="Чистый, розовый" />Чистый, розовый</label>
+			    </div>
+			</td>
 		    </tr>
 		    <tr>
-			    <td><label for="kash">Кашель</label></td>
-			    <td>
-				    <div id="kash" class="checkboxes">
-					    <div><input type="checkbox" value="Сухой" >Сухой</input></div>
-					    <div><input type="checkbox" value="Малопродуктивный" >Малопродуктивный</input></div>
-					    <div><input type="checkbox" value="Влажный" >Влажный</input></div>
-					    <div><input type="checkbox" value="Частый" >Частый</input></div>
-					    <div><input type="checkbox" value="Редкий" >Редкий</input></div>
-					    <div><input type="checkbox" value="Глубокий" >Глубокий</input></div>
-					    <div><input type="checkbox" value="Приступообразный" >Приступообразный</input></div>
-				    </div>
-			    </td>
+			<td><label for="kash">Кашель</label></td>
+			<td>
+			    <div id="kash" class="checkboxes">
+				<label><input type="checkbox" value="Сухой" />Сухой</label>
+				<label><input type="checkbox" value="Малопродуктивный" />Малопродуктивный</label>
+				<label><input type="checkbox" value="Влажный" />Влажный</label>
+				<label><input type="checkbox" value="Частый" />Частый</label>
+				<label><input type="checkbox" value="Редкий" />Редкий</label>
+				<label><input type="checkbox" value="Глубокий" />Глубокий</label>
+				<label><input type="checkbox" value="Приступообразный" />Приступообразный</label>
+			    </div>
+			</td>
 		    </tr>
 		    <tr>
-			    <td><label for="odsh" >Одышка</label></td>
-			    <td><select id="odsh" >
-				    <option>Экспираторная</option>
-				    <option>Инспираторная</option>
-				    <option>Смешанная</option>
-				    <option>Нет</option>
+			<td><label for="odsh" >Одышка</label></td>
+			<td><select id="odsh" >
+				<option>Экспираторная</option>
+				<option>Инспираторная</option>
+				<option>Смешанная</option>
+				<option>Нет</option>
 			    </select></td>
 		    </tr>
 		    <tr>
-			    <td><label for="limf">Лимфотические узлы</label></td>
-			    <td>
-				    <div id="limf" class="checkboxes">
-					    <div><input type="checkbox" value="Не увеличены" >Не увеличены</input></div>
-					    <div><input type="checkbox" value="Безболезнены" >Безболезнены</input></div>
-					    <div><input type="checkbox" value="Болезнены" >Болезнены</input></div>
-					    <div><input type="checkbox" value="Подвижные" >Подвижные</input></div>
-					    <div><input type="checkbox" value="Единичные" >Единичные</input></div>
-				    </div>
-			    </td>
+			<td><label for="limf">Лимфотические узлы</label></td>
+			<td>
+			    <div id="limf" class="checkboxes">
+				<label><input type="checkbox" value="Не увеличены" />Не увеличены</label>
+				<label><input type="checkbox" value="Безболезнены" />Безболезнены</label>
+				<label><input type="checkbox" value="Болезнены" />Болезнены</label>
+				<label><input type="checkbox" value="Подвижные" />Подвижные</label>
+				<label><input type="checkbox" value="Единичные" />Единичные</label>
+			    </div>
+			</td>
 		    </tr>
 		    <tr>
-			    <td><label for="nosd">Носовое дыхание</label></td>
-			    <td>
-				    <div id="nosd" class="checkboxes">
-					    <div><input type="checkbox" value="Свободное" >Свободное</input></div>
-					    <div><input type="checkbox" value="Затрудненно" >Затрудненно</input></div>
-					    <div><input type="checkbox" value="Заложенность" >Заложенность</input></div>
-					    <div><input type="checkbox" value="Из носа слизистое густое отделяемое" >Из носа слизистое густое отделяемое</input></div>
-					    <div><input type="checkbox" value="Из носа скудные слизистые выделения" >Из носа скудные слизистые выделения</input></div>
-				    </div>
-			    </td>
+			<td><label for="nosd">Носовое дыхание</label></td>
+			<td>
+			    <div id="nosd" class="checkboxes">
+				<label><input type="checkbox" value="Свободное" />Свободное</label>
+				<label><input type="checkbox" value="Затрудненно" />Затрудненно</label>
+				<label><input type="checkbox" value="Заложенность" />Заложенность</label>
+				<label><input type="checkbox" value="Из носа слизистое густое отделяемое" />Из носа слизистое густое отделяемое</label>
+				<label><input type="checkbox" value="Из носа скудные слизистые выделения" />Из носа скудные слизистые выделения</label>
+			    </div>
+			</td>
 		    </tr>
 		    <tr>
-			    <td><label for="dyha">Дыхание</label></td>
-			    <td><select id="dyha" >
-				    <option>Везикулярное</option>
-				    <option>Пуэрильное</option>
-				    <option>Жёсткое, хрипы мелкопузырчатые</option>
-				    <option>Жёсткое, хрипы влажные, мелкопузырчатые</option>
-				    <option>Жёсткое, хрипы влажные</option>
-				    <option>Жёсткое, хрипы сухие</option>
-				    <option>Жёсткое, хрипы сухие, свистящие</option>
-				    <option>Жёсткое, хрипы свистящие</option>
-				    <option>Жёсткое, хрипы крепитирующие</option>
-				    <option>Жёсткое, хрипы единичные сухие</option>
-				    <option>Жёсткое, хрипы единичные влажные</option>
+			<td><label for="dyha">Дыхание</label></td>
+			<td>
+			    <select id="dyha">
+				<option>Везикулярное</option>
+				<option>Пуэрильное</option>
+				<option>Жёсткое</option>
+			    </select>
+			    <select  id="dyha-stepen">
+				<option></option>
+				<option>хрипов нет</option>
+				<option>хрипы мелкопузырчатые</option>
+				<option>хрипы влажные мелкопузырчатые</option>
+				<option>хрипы влажные</option>
+				<option>хрипы сухие</option>
+				<option>хрипы сухие свистящие</option>
+				<option>хрипы свистящие</option>
+				<option>хрипы крепитирующие</option>
+				<option>хрипы единичные сухие</option>
+				<option>хрипы единичные влажные</option>
+			    </select>
+			</td>
+		    </tr>
+		    <tr>
+			<td><label for="serd">Сердечные тоны</label></td>
+			<td><select id="serd" >
+				<option>Ясные, ритмичные</option>
+				<option>Систолический шум</option>
 			    </select></td>
 		    </tr>
 		    <tr>
-			    <td><label for="serd">Сердечные тоны</label></td>
-			    <td><select id="serd" >
-				    <option>Ясные, ритмичные</option>
-				    <option>Систолический шум</option>
+			<td><label for="jivo">Живот</label></td>
+			<td><select id="jivo" >
+				<option>Мягкий, безболезненный</option>
+				<option>Мягкий, болезнен в области желчного пузыря</option>
+				<option>Мягкий, болезнен в области эпигастрия</option>
 			    </select></td>
 		    </tr>
 		    <tr>
-			    <td><label for="jivo">Живот</label></td>
-			    <td><select id="jivo" >
-				    <option>Мягкий, безболезненный</option>
-				    <option>Мягкий, болезнен в области желчного пузыря</option>
-				    <option>Мягкий, болезнен в области эпигастрия</option>
+			<td><label for="stul">Стул</label></td>
+			<td><select id="stul" >
+				<option>Оформлен</option>
+				<option>Жёлтый, кашицеобразный</option>
+				<option>Жидкий</option>
+				<option>Запоры</option>
 			    </select></td>
 		    </tr>
 		    <tr>
-			    <td><label for="stul">Стул</label></td>
-			    <td><select id="stul" >
-				    <option>Оформлен</option>
-				    <option>Жёлтый, кашицеобразный</option>
-				    <option>Жидкий</option>
-				    <option>Запоры</option>
-			    </select></td>
-		    </tr>
-		    <tr>
-			    <td><label for="moch">Мочеиспускание</label></td>
-			    <td><select id="moch" >
-				    <option>Свободное</option>
-				    <option>Учащенное</option>
-				    <option>Учащенное, болезненное</option>
+			<td><label for="moch">Мочеиспускание</label></td>
+			<td><select id="moch" >
+				<option>Свободное</option>
+				<option>Учащенное</option>
+				<option>Учащенное, болезненное</option>
 			    </select></td>
 		    </tr>
 		</table>
 
 		<h1>Диагноз</h1>
 
-		<table class="parameters">
-		    <tbody>
-			<tr>
-			    <td><label for="bolezn">Болезнь</label></td>
-			    <td>
-				<select id="bolezn" >
+		<label><input id="diagnoz-zdorov" type="checkbox" name="diagnoz-zdorov"/>Здоров</label>
+		<div id="diagnoz-ne-zdorov">
+		    <table class="parameters">
+			<tbody>
+			    <tr>
+				<td><label for="bolezn">Болезнь</label></td>
+				<td>
+				    <select id="bolezn" >
 					<option>Острая респираторная вирусная инфекция</option>
 					<option>Острый фарингит</option>
 					<option>Острый трахеит</option>
@@ -194,51 +206,96 @@
 					<option>Ветряная оспа</option>
 					<option>Атопический дерматит</option>
 					<option>Дисбактериоз кишечника</option>
-				</select>
-				<select id="bolezn-stepen" >
+				    </select>
+				    <select id="bolezn-stepen" >
 					<option>Средней тяжести</option>
 					<option>Тяжёлое течение</option>
 					<option>Лёгкое течение</option>
-				</select>
-			    </td>
-			</tr>
-			<tr>
-			    <td>
-				<div><input id="reconv" type="checkbox" name="reconv" checked/>Реконвалесцент</div>
-			    </td>
-			</tr> 
-		    </tbody>
-		</table>
-		<div id="zdorov" class="sub">
-		    <div class="row-720"><label for="yavka-comment">Комментарий</label><input id="yavka-comment" type="text" class="large" /></div>
-		    <div class="row-720"><label for="yavka">Явка</label><input id="yavka" type="text" class="middle" /></div>
-		</div>
-		<div id="ne-zdorov" class="sub">
-		    <table class="parameters">
-			<tbody>
-			    <tr>
-				<td><input type="checkbox" name="uchrejd" checked/><label for="uchrejd">Справка</label></td>
-				<td>
-				    <select id="uchrejd" >
-					<option>ДДУ</option>
-					<option>Школа</option>
-					<option>Техникум</option>
 				    </select>
 				</td>
 			    </tr>
 			    <tr>
-				<td><input type="checkbox" name="med-otvod" checked/><label for="med-otvod">Мед. отвод</label></td>
 				<td>
-				    <input id="med-otvod" type="text" class="middle" />
+				    <label><input type="checkbox" name="oslojn" checked/>Осложнение</label>
+				</td>
+				<td>
+				    <textarea id="oslojn" rows="3"></textarea>
 				</td>
 			    </tr>
-			</tbody>
-		    </table>			
-		</div>
-		<table class="parameters">
-		    <tbody>
 			    <tr>
-				<td><input type="checkbox" name="napravl" checked/><label for="napravl">Направление</label></td>
+				<td>
+				    <label><input type="checkbox" name="soput" checked/>Сопутствующие</label>
+				</td>
+				<td>
+				    <textarea id="soput" rows="3"></textarea>
+				</td>
+			    </tr>
+			    <tr>
+				<td>
+				    <label><input id="zdorov-reconv" type="checkbox" name="zdorov-reconv" checked/>Реконвалесцент</label>
+				</td>
+			    </tr> 
+			</tbody>
+		    </table>
+		    <div id="ne-zdorov" class="sub">
+			<table class="parameters">
+			    <tbody>
+				<tr>
+				    <td>
+					<label><input type="checkbox" name="ne-zdorov-comment" checked/>Комментарий</label>
+				    </td>
+				    <td>
+					<textarea id="ne-zdorov-comment" rows="3"></textarea>
+				    </td>
+				</tr>
+				<tr>			    
+				    <td><label><input type="checkbox" name="yavka" checked/>Явка</label></td>
+				    <td>
+					<input id="yavka" type="text" class="middle" />
+				    </td>
+				</tr>
+			    </tbody>
+			</table>
+		    </div>
+		    <div id="zdorov" class="sub">
+			<table class="parameters">
+			    <tbody>
+				<tr>
+				    <td>
+					<label><input type="checkbox" name="zdorov-comment" checked/>Комментарий</label>
+				    </td>
+				    <td>
+					<textarea id="zdorov-comment" rows="3"></textarea>
+				    </td>
+				</tr>
+				<tr>
+				    <td><label><input type="checkbox" name="uchrejd" checked/>Справка</label></td>
+				    <td>
+					<select id="uchrejd" >
+					    <option>в бассейн</option>
+					    <option>в муз. школу</option>
+					    <option>в худ. школу</option>
+					    <option>в спорт. секцию</option>
+					    <option>в худ. гимнастику</option>
+					    <option>в ДДУ</option>
+					    <option>в школу</option>
+					    <option>в техникум</option>
+					</select>
+				    </td>
+				</tr>
+				<tr>
+				    <td><label><input type="checkbox" name="med-otvod" checked/>Мед. отвод</label></td>
+				    <td>
+					<input id="med-otvod" type="text" class="middle" />
+				    </td>
+				</tr>
+			    </tbody>
+			</table>			
+		    </div>
+		    <table class="parameters">
+			<tbody>
+			    <tr>
+				<td><label><input type="checkbox" name="napravl" checked/>Направление</label></td>
 				<td>
 				    <select id="napravl" >
 					<option>на госпитализацию</option>
@@ -248,6 +305,17 @@
 				    </select>
 				</td>
 			    </tr>
+			</tbody>
+		    </table>
+		</div>
+		<table class="parameters" id="yavka-zdorov-section">
+		    <tbody>
+			<tr>
+			    <td><label><input type="checkbox" name="yavka-zdorov" checked/>Явка</label></td>
+			    <td>
+				<input id="yavka-zdorov" type="text" class="middle" />
+			    </td>
+			</tr>
 		    </tbody>
 		</table>
 		<h1>Лечение</h1>
@@ -263,6 +331,8 @@
 	    <div id="date-p" class="date"></div>
 	    <h1 id="type-p"></h1>
 	    <h2 id="name-p"></h2>
+	    <div id="person-date-p"></div>
+	    <div id="aktivno-p"></div>
 	    <div id="adres-p"></div>
 	    <div id="jalob-p"></div>
 	    <table class="info" border="1">
@@ -281,34 +351,54 @@
 		    </tr>
 		<tbody>
 	    </table>
-	    
+
 	    <div class="separator"></div>
-	    
-	    <div id="state-p"></div>
-	    <div id="skin-p"></div>
-	    <div id="zev-p"></div>
-	    <div id="kash-p"></div>
-	    <div id="odsh-p"></div>		
-	    <div id="limf-p"></div>
-	    <div id="nosd-p"></div>
-	    <div id="dyha-p"></div>
-	    <div id="serd-p"></div>
-	    <div id="jivo-p"></div>
-	    <div id="stul-p"></div>
-	    <div id="moch-p"></div>
-	    <div id="yavka-p"></div>
-	    
-	    <div class="separator"></div>
-	    
-	    <h2>Диагноз</h2>
-	    <div id="bolezn-p"></div>
-	    <div id="bolezn-stepen-p"></div>
-	    <div id="reconv-p"></div>
-	    <div id="reconv-detail-p">
-		<div id="uchrejd-p"></div>
-		<div id="med-otvod-p"></div>
-	    </div>
-	    <div id="napravl-p"></div>
+
+	    <table class="result">
+		<tbody>
+		    <tr>
+			<td>
+			    <h2>Объективно</h2>
+			    <div id="state-p"></div>
+			    <div id="skin-p"></div>
+			    <div id="zev-p"></div>
+			    <div id="kash-p"></div>
+			    <div id="odsh-p"></div>		
+			    <div id="limf-p"></div>
+			    <div id="nosd-p"></div>
+			    <div id="dyha-p"></div>
+			    <div id="serd-p"></div>
+			    <div id="jivo-p"></div>
+			    <div id="stul-p"></div>
+			    <div id="moch-p"></div>			    
+			</td>
+			<td>
+			    <h2>Диагноз</h2>
+			    <div id="diagnoz-ne-zdorov-p">
+				<div id="bolezn-p"></div>
+				<div id="bolezn-stepen-p"></div>
+				<div id="zdorov-p"></div>
+				<div id="zdorov-detail-p">
+				    <div id="zdorov-comment-p"></div>
+				    <div id="uchrejd-p"></div>
+				    <div id="med-otvod-p"></div>
+				</div>
+				<div id="ne-zdorov-detail-p">
+				    <div id="ne-zdorov-comment-p"></div>
+				    <div id="yavka-p"></div>
+				</div>
+				<div id="napravl-p"></div>
+				<div id="oslojn-p"></div>
+				<div id="soput-p"></div>
+			    </div>
+			    <div id="diagnoz-zdorov-section-p">
+				<div id="diagnoz-zdorov-p"></div>
+				<div id="yavka-zdorov-p"></div>
+			    </div>
+			</td>
+		    </tr>
+		</tbody>
+	    </table>
 	</div>
     </BODY>
 </HTML>
