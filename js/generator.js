@@ -26,7 +26,6 @@ function initialization(){
 	// добавить выбор даты
 	$('#date').simpleDatepicker();
 	$('#yavka').simpleDatepicker();
-	$('#yavka-zdorov').simpleDatepicker();
 	$('#med-otvod').simpleDatepicker();
 	$('#person-date').simpleDatepicker();
 }
@@ -162,7 +161,7 @@ function generate(){
 	$('#diagnoz-ne-zdorov').css('display', 'none');
 	$('#diagnoz-ne-zdorov-p').css('display', 'none');
 	
-	$('#yavka-zdorov-section').css('display', 'block');
+	$('#spravka-zdorov-section').css('display', 'block');
 	$('#diagnoz-zdorov-section-p').css('display', 'block');
 	
 	$('#diagnoz-zdorov-p').text("Здоров");
@@ -171,7 +170,7 @@ function generate(){
 	$('#diagnoz-ne-zdorov').css('display', 'block');
 	$('#diagnoz-ne-zdorov-p').css('display', 'block');
 	
-	$('#yavka-zdorov-section').css('display', 'none');
+	$('#spravka-zdorov-section').css('display', 'none');
 	$('#diagnoz-zdorov-section-p').css('display', 'none');
     }
     // реконвалесцент
@@ -200,7 +199,7 @@ function generate(){
     fill_not_nes_select( 'uchrejd', 'Справка', '' );
     fill_not_nes_select( 'napravl', 'Направление', '');
     fill_not_nes_select( 'yavka', 'Явка', ':');
-    fill_not_nes_select( 'yavka-zdorov', 'Явка', ':');
+    fill_not_nes_select( 'spravka-zdorov', 'Справка', '');
     fill_not_nes_textarea( 'oslojn', 'Осложнение', ':');
     fill_not_nes_textarea( 'soput', 'Сопутствующие', ':');
     fill_not_nes_textarea( 'zdorov-comment', 'Комментарий', ':');
@@ -211,7 +210,6 @@ function generate(){
     update_not_nes_inputs('oslojn');
     update_not_nes_inputs('med-otvod');
     update_not_nes_inputs('yavka');
-    update_not_nes_inputs('yavka-zdorov');
     update_not_nes_inputs('soput');
     update_not_nes_inputs('zdorov-comment');
     update_not_nes_inputs('ne-zdorov-comment');

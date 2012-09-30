@@ -1,6 +1,6 @@
 <HTML>
     <HEAD>
-	<TITLE>Шаблонизатор медицинских карт v0.8</TITLE>
+	<TITLE>Шаблонизатор медицинских карт v1.0</TITLE>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<LINK href="css/style.css" rel="stylesheet" type="text/css">
 	<LINK href="css/text-box.css" rel="stylesheet" type="text/css">
@@ -308,12 +308,21 @@
 			</tbody>
 		    </table>
 		</div>
-		<table class="parameters" id="yavka-zdorov-section">
+		<table class="parameters" id="spravka-zdorov-section">
 		    <tbody>
 			<tr>
-			    <td><label><input type="checkbox" name="yavka-zdorov" checked/>Явка</label></td>
+			    <td><label><input type="checkbox" name="spravka-zdorov" checked/>Справка</label></td>
 			    <td>
-				<input id="yavka-zdorov" type="text" class="middle" />
+				<select id="spravka-zdorov" >
+				    <option>в бассейн</option>
+				    <option>в муз. школу</option>
+				    <option>в худ. школу</option>
+				    <option>в спорт. секцию</option>
+				    <option>в худ. гимнастику</option>
+				    <option>в ДДУ</option>
+				    <option>в школу</option>
+				    <option>в техникум</option>
+				</select>
 			    </td>
 			</tr>
 		    </tbody>
@@ -393,7 +402,7 @@
 			    </div>
 			    <div id="diagnoz-zdorov-section-p">
 				<div id="diagnoz-zdorov-p"></div>
-				<div id="yavka-zdorov-p"></div>
+				<div id="spravka-zdorov-p"></div>
 			    </div>
 			</td>
 		    </tr>
