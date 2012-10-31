@@ -13,13 +13,8 @@
 .param-box table.parameters input.custom-input{ margin:0; width: 270px; }
 .param-box table.parameters select{ width: 270px; }
 
-.param-box table.lechenie input.custom-input{ margin:0; width: 200px; }
-.param-box table.lechenie select{ width: 200px; }
-.param-box table.lechenie td { width: auto; border-bottom: 1 dotted #777; border-top: 1 dotted #777; vertical-align: top; padding: 10px; background-color: #DDD;}
-.param-box table.lechenie td.left { border-left: 1 dotted #777; }
-.param-box table.lechenie td.right { border-right: 1 dotted #777; }
-.param-box table.lechenie td input[type=button] { margin: 10px 0; }
-.param-box table.lechenie { border-spacing: 0; }
+.param-box table.lechenie div.table_name { margin: 5px; font-weight: bold;  }
+.param-box table.lechenie div.treat_table_wrapper { border: 1 dotted #777; margin: 5px; background-color: #EEE; }
 .param-box .checkboxes input { width: 15px; }
 .param-box .checkboxes label { display: block; }
 .param-box textarea { width: 250px; }
